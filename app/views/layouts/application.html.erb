@@ -2,13 +2,25 @@
 <html>
 <head>
   <title>MCBook</title>
-  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application.js', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<a href="#" class="navbar-brand">MCBook</a>
+			<ul class="nav navbar-nav">
+        		<li class="active"><%= link_to "Status", statuses_path %>
+        		</li>
+        	</ul>
+		</div>
+	</div>
+	<div class="container">
+		<%= yield %>
+	</div>
+		
 
 </body>
 </html>
